@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -32,7 +32,7 @@
 #include "dblureffectwidget.h"
 
 #include <dwindowclosebutton.h>
-#include <thememanager.h>
+#include <DThemeManager>
 
 #include "../../core/metasearchservice.h"
 #include "../helper/widgethellper.h"
@@ -170,7 +170,7 @@ InfoDialog::InfoDialog(QWidget *parent)
     : DAbstractDialog(parent), d_ptr(new InfoDialogPrivate(this))
 {
     Q_D(InfoDialog);
-    ThemeManager::instance()->regisetrWidget(this);
+    DThemeManager::instance()->registerWidget(this);
     d->initUI();
 }
 

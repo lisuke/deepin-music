@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -32,8 +32,9 @@
 #include <QProgressBar>
 #include <QStackedLayout>
 
-#include <thememanager.h>
 #include <DHiDPIHelper>
+#include <DThemeManager>
+#include <DToast>
 
 #include "../musicapp.h"
 #include "../core/playlistmanager.h"
@@ -44,8 +45,9 @@
 #include "widget/modebuttom.h"
 #include "widget/label.h"
 #include "widget/cover.h"
-#include "widget/tip.h"
 #include "widget/soundvolume.h"
+
+DWIDGET_USE_NAMESPACE
 
 static const char *sPropertyFavourite         = "fav";
 static const char *sPropertyPlayStatus        = "playstatus";
@@ -112,7 +114,9 @@ void FooterPrivate::installTipHint(QWidget *w, const QString &hintstr)
 {
     Q_Q(Footer);
     // TODO: parent must be mainframe
-    auto hintWidget = new Tip(QPixmap(), hintstr, q->parentWidget());
+    auto hintWidget = new Dtk::Widget::DToast(q->parentWidget());
+    hintWidget->setContentsMargins(0,0,0,0);
+    hintWidget->setText(hintstr);
     hintWidget->setFixedHeight(32);
     installHint(w, hintWidget);
 }
@@ -130,7 +134,7 @@ void FooterPrivate::initConnection()
     q->connect(btPlayMode, &ModeButton::modeChanged,
     q, [ = ](int mode) {
         emit q->modeChanged(mode);
-        auto hintWidget = btPlayMode->property("HintWidget").value<Tip *>();
+        auto hintWidget = btPlayMode->property("HintWidget").value<Dtk::Widget::DToast *>();
         hintFilter->showHitsFor(btPlayMode, hintWidget);
     });
 
@@ -191,7 +195,7 @@ Footer::Footer(QWidget *parent) :
     setFocusPolicy(Qt::ClickFocus);
     setObjectName("Footer");
 
-    ThemeManager::instance()->regisetrWidget(this);
+    DThemeManager::instance()->registerWidget(this);
 
     auto mainVBoxlayout = new QVBoxLayout(this);
     mainVBoxlayout->setSpacing(0);
@@ -670,7 +674,7 @@ void Footer::onModeChange(int mode)
     d->btPlayMode->blockSignals(false);
     d->mode = mode;
 
-    auto hintWidget = d->btPlayMode->property("HintWidget").value<Tip *>();
+    auto hintWidget = d->btPlayMode->property("HintWidget").value<Dtk::Widget::DToast *>();
     QString playmode;
     switch (mode) {
     default:

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -35,7 +35,7 @@
 #include <QAbstractItemDelegate>
 #include <QLineEdit>
 
-#include <thememanager.h>
+#include <DThemeManager>
 
 #include "../core/util/lyric.h"
 
@@ -44,7 +44,7 @@
 #include "widget/searchmetaitem.h"
 #include "widget/lyricview.h"
 
-//DWIDGET_USE_NAMESPACE
+DWIDGET_USE_NAMESPACE
 
 static const int LyricLineHeight = 40;
 static const QString defaultLyric = "No Lyric";
@@ -148,6 +148,8 @@ LyricWidget::LyricWidget(QWidget *parent)
     : QFrame(parent), d_ptr(new LyricWidgetPrivate(this))
 {
     Q_D(LyricWidget);
+    DThemeManager::instance()->registerWidget(this);
+
     setObjectName("LyricWidget");
 
     auto layout = new QHBoxLayout(this);
@@ -197,7 +199,6 @@ LyricWidget::LyricWidget(QWidget *parent)
     d->m_cover->setObjectName("LyricCover");
 
     d->lyricview = new LyricView();
-    d->lyricview->setObjectName("LyricTextView");
 
     d->m_model = new QStringListModel;
     d->setLyricLines("");
@@ -295,10 +296,6 @@ LyricWidget::LyricWidget(QWidget *parent)
             itemWidget->setChecked(true);
         }
     });
-
-
-    ThemeManager::instance()->regisetrWidget(this);
-    ThemeManager::instance()->regisetrWidget(d->lyricview);
 }
 
 LyricWidget::~LyricWidget()
@@ -431,7 +428,6 @@ void LyricWidget::onProgressChanged(qint64 value, qint64 /*length*/)
     QPalette p = palette();
     p.setColor(QPalette::Background, d->backgroundColor);
     setPalette(p);
-
 
     auto len = d->m_lyriclist.m_lyricElements.length();
 

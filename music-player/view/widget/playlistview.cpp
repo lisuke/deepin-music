@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -26,9 +26,11 @@
 #include <QScrollBar>
 #include <QStyleFactory>
 
-#include <thememanager.h>
+#include <DThemeManager>
 
 #include "playlistitem.h"
+
+DWIDGET_USE_NAMESPACE
 
 class PlayListViewPrivate
 {
@@ -70,7 +72,7 @@ PlayListView::PlayListView(QWidget *parent) : QListWidget(parent), d_ptr(new Pla
     Q_D(PlayListView);
 
     setObjectName("PlayListView");
-    ThemeManager::instance()->regisetrWidget(this);
+    DThemeManager::instance()->registerWidget(this);
 
     setDragEnabled(true);
     viewport()->setAcceptDrops(true);

@@ -139,10 +139,8 @@
         <file>dark/ImportWidget.theme</file>
         <file>dark/InfoDialog.theme</file>
         <file>dark/LoadWidget.theme</file>
-        <file>dark/LyricTextView.theme</file>
         <file>dark/LyricWidget.theme</file>
         <file>dark/MainFrame.theme</file>
-        <file>dark/MusicItem.theme</file>
         <file>dark/MusicListSort.theme</file>
         <file>dark/MusicListView.theme</file>
         <file>dark/MusicListWidget.theme</file>
@@ -154,9 +152,8 @@
         <file>dark/SearchMetaList.theme</file>
         <file>dark/SearchResult.theme</file>
         <file>dark/SoundVolume.theme</file>
-        <file>dark/Tip.theme</file>
         <file>dark/Titlebar.theme</file>
-        <file>dark/TitleBarWidget.theme</file>
+        <file>dark/TitlebarWidget.theme</file>
         <file>light/image/back_hover.svg</file>
         <file>light/image/back_normal.svg</file>
         <file>light/image/back_press.svg</file>
@@ -178,10 +175,8 @@
         <file>light/ImportWidget.theme</file>
         <file>light/InfoDialog.theme</file>
         <file>light/LoadWidget.theme</file>
-        <file>light/LyricTextView.theme</file>
         <file>light/LyricWidget.theme</file>
         <file>light/MainFrame.theme</file>
-        <file>light/MusicItem.theme</file>
         <file>light/MusicListView.theme</file>
         <file>light/MusicListWidget.theme</file>
         <file>light/PlayListItem.theme</file>
@@ -192,9 +187,11 @@
         <file>light/SearchMetaList.theme</file>
         <file>light/SearchResult.theme</file>
         <file>light/SoundVolume.theme</file>
-        <file>light/Tip.theme</file>
         <file>light/Titlebar.theme</file>
-        <file>light/TitleBarWidget.theme</file>
-        <file>theme.qrc</file>
+        <file>light/TitlebarWidget.theme</file>
+        <file>dark/LyricView.theme</file>
+        <file>light/LyricView.theme</file>
+        <file>dark/MusicItemStyleProxy.theme</file>
+        <file>light/MusicItemStyleProxy.theme</file>
     </qresource>
 </RCC>

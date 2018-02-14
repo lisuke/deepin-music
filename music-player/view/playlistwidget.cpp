@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -27,7 +27,7 @@
 #include <QFocusEvent>
 
 #include <DUtil>
-#include <thememanager.h>
+#include <DThemeManager>
 
 #include "../core/playlist.h"
 #include "widget/playlistview.h"
@@ -66,7 +66,7 @@ PlaylistWidget::PlaylistWidget(QWidget *parent) : QFrame(parent)
     layout->addWidget(btAddFrame, 0, Qt::AlignHCenter | Qt::AlignBottom);
     layout->addStretch();
 
-    ThemeManager::instance()->regisetrWidget(this);
+    DThemeManager::instance()->registerWidget(this);
 
     connect(btAdd, &QPushButton::clicked, this, [ = ](bool /*checked*/) {
         qDebug() << "addPlaylist(true);";

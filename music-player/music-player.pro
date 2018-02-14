@@ -39,11 +39,9 @@ SOURCES += \
     view/widget/searchresult.cpp \
     view/widget/slider.cpp \
     view/widget/label.cpp \
-    view/widget/tip.cpp \
     view/widget/soundvolume.cpp \
     view/widget/filter.cpp \
     core/player.cpp \
-    view/helper/thememanager.cpp \
     view/widget/titlebarwidget.cpp \
     view/widget/ddropdown.cpp \
     view/widget/searchmetalist.cpp \
@@ -94,13 +92,11 @@ HEADERS += \
     view/widget/searchresult.h \
     view/widget/slider.h \
     view/widget/label.h \
-    view/widget/tip.h \
     view/importwidget.h \
     view/widget/soundvolume.h \
     view/widget/filter.h \
     core/player.h \
     presenter/presenter_p.h \
-    view/helper/thememanager.h \
     view/titlebar.h \
     view/widget/titlebarwidget.h \
     view/widget/ddropdown.h \
@@ -117,7 +113,6 @@ HEADERS += \
     view/widget/listview.h \
     view/widget/model/musiclistmodel.h \
     view/widget/delegate/lyriclinedelegate.h \
-    view/widget/delegate/musicitemdelegate_p.h \
     view/widget/delegate/musicitemdelegate.h \
     view/lyricwidget.h \
     view/widget/lyricview.h \
@@ -125,7 +120,8 @@ HEADERS += \
     core/util/threadpool.h \
     view/footerwidget.h \
     view/loadwidget.h \
-    view/widget/closeconfirmdialog.h
+    view/widget/closeconfirmdialog.h \
+    view/widget/delegate/musicitemdelegate_p.h
 
 RESOURCES += \
     resource/theme/theme.qrc \
@@ -133,11 +129,9 @@ RESOURCES += \
 
 unix{
 SOURCES += \
-    view/helper/xutil.cpp \
     core/util/inotifyengine.cpp
 
 HEADERS += \
-    view/helper/xutil.h \
     core/util/inotifyengine.h
 
 # Automating generation .qm files from .ts files

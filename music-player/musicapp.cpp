@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -36,7 +36,7 @@
 #include "core/util/threadpool.h"
 #include "presenter/presenter.h"
 #include "view/mainframe.h"
-#include "view/helper/thememanager.h"
+#include <DThemeManager>
 
 using namespace Dtk::Widget;
 

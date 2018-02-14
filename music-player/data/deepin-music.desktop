@@ -1,5 +1,5 @@
 [Desktop Entry]
-Categories=Music;Qt;
+Categories=Audio;AudioVideo;Qt;
 Comment=Play your music collection
 Exec=deepin-music %F
 GenericName=Music Player
@@ -7,6 +7,7 @@ Icon=deepin-music
 MimeType=audio/musepack;application/musepack;application/x-ape;audio/ape;audio/x-ape;audio/x-musepack;application/x-musepack;audio/x-mp3;application/x-id3;audio/mpeg;audio/x-mpeg;audio/x-mpeg-3;audio/mpeg3;audio/mp3;audio/x-m4a;audio/mpc;audio/x-mpc;audio/mp;audio/x-mp;application/ogg;application/x-ogg;audio/vorbis;audio/x-vorbis;audio/ogg;audio/x-ogg;audio/x-flac;application/x-flac;audio/flac;
 Name=Deepin Music
 Type=Application
+X-Deepin-ManualID=deepin-music
 
 # Translations:
 # Do not manually modify!
@@ -105,7 +106,7 @@ GenericName[nl]=Muziekspeler
 GenericName[pl]=Odtwarzacz muzyki
 GenericName[pt]=Reprodutor de Música
 GenericName[pt_BR]=Reprodutor de músicas
-GenericName[ro]=Player-ul muzical
+GenericName[ro]=Player muzical
 GenericName[ru]=Музыкальный Проигрыватель
 GenericName[sk]=Hudobný prehrávač
 GenericName[sl]=Glasbeni predvajalnik
@@ -161,7 +162,7 @@ Name[nb]=Deepin Musikk
 Name[nl]=Deepin Muziekspeler
 Name[pl]=Muzyka Deepin
 Name[pl_PL]=Odtwarzacz muzyki Deepin
-Name[pt]=Música Deepin
+Name[pt]=Deepin Music
 Name[pt_BR]=Deepin Music
 Name[pt_PT]=Reprodutor de Música Deepin
 Name[ro]= Player-ul muzical Deepin
@@ -178,13 +179,14 @@ Name[zh_CN]=深度音乐
 Name[zh_HK]=Deepin 音樂
 Name[zh_TW]=Deepin 音樂
 
-[Next Shortcut Group]
+[X-Next-Shortcut-Group]
 Exec=dbus-send --print-reply --dest=org.mpris.MediaPlayer2.DeepinMusic /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 Name=Next track
 
 # Translations:
 # Do not manually modify!
 Name[am]=የሚቀጥለውን ተረኛ
+Name[am_ET]=የሚቀጥለው ተረኛ
 Name[ar]=المسار التالي
 Name[ast]=Pista siguiente
 Name[bg]=Следваща песен
@@ -223,19 +225,21 @@ Name[ro]=Melodia următoare
 Name[ru]=Следующая дорожка
 Name[sk]=Ďalšia stopa
 Name[sl]=Naslednja skladba
+Name[sr]=Следећа нумера
 Name[tr]=Sonraki parça
 Name[uk]=Наступний трек
 Name[zh_CN]=下一首
 Name[zh_HK]=下一首歌曲
 Name[zh_TW]=下一曲
 
-[PlayPause Shortcut Group]
+[X-PlayPause-Shortcut-Group]
 Exec=dbus-send --print-reply --dest=org.mpris.MediaPlayer2.DeepinMusic /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 Name=Play/Pause track
 
 # Translations:
 # Do not manually modify!
 Name[am]=ተረኛ ማጫወቻ/ማስቆሚያ
+Name[am_ET]=ተረኛ ማጫወቻ/ማስቆሚያ
 Name[ar]=تشغيل / إيقاف المسار
 Name[ast]=Reproducir/posar pista
 Name[bg]=Изпълнение/Пауза на записа
@@ -274,18 +278,20 @@ Name[ro]=Redare/Pauză melodia
 Name[ru]=Воспроизведение/Пауза дорожки
 Name[sk]=Prehrávať/Pozastaviť skladbu
 Name[sl]=Predvajaj/Zaustavi skladbo
+Name[sr]=Пусти/Паузирај нумеру
 Name[tr]= Parçayı Oynat/Duraklat
 Name[uk]=Відтворити/Призупинити трек
 Name[zh_CN]=暂停/继续
 Name[zh_TW]=播放／暫停
 
-[Previous Shortcut Group]
+[X-Previous-Shortcut-Group]
 Exec=dbus-send --print-reply --dest=org.mpris.MediaPlayer2.DeepinMusic /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 Name=Previous track
 
 # Translations:
 # Do not manually modify!
 Name[am]=ቀደም ያለው ተረኛ
+Name[am_ET]=ያለፈው ተረኛ
 Name[ar]=المسار السابق
 Name[ast]=Pista previa
 Name[bg]=Предишна песен
@@ -324,6 +330,7 @@ Name[ro]=Melodia anterioară
 Name[ru]=Предыдущая дорожка
 Name[sk]=Predchádzajúca stopa
 Name[sl]=Prejšnja skladba
+Name[sr]=Претходна нумера
 Name[tr]=Önceki parça
 Name[uk]=Попередній трек
 Name[zh_CN]=上一首

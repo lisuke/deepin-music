@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -21,7 +21,9 @@
 
 #include "pinyinsearch.h"
 
-#include "../../../vendor/src/chinese2pinyin/chinese2pinyin.h"
+#include <QFile>
+#include <QTextStream>
+#include <DPinyin>
 
 namespace DMusic
 {
@@ -47,7 +49,7 @@ inline bool isChinese(const QChar &c)
 
 inline QString toChinese(const QString &c)
 {
-    QString pinyin = Pinyin::Chinese2Pinyin(c);
+    QString pinyin = Dtk::Core::Chinese2Pinyin(c);
     if (pinyin.length() >= 2
             && isNumber(pinyin.at(pinyin.length() - 1))) {
         return pinyin.left(pinyin.length() - 1);

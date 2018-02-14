@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -24,13 +24,13 @@
 #include <QFrame>
 
 class SearchResult;
-class TitleBarWidgetPrivate;
-class TitleBarWidget : public QFrame
+class TitlebarWidgetPrivate;
+class TitlebarWidget : public QFrame
 {
     Q_OBJECT
 public:
-    explicit TitleBarWidget(QWidget *parent = 0);
-    ~TitleBarWidget();
+    explicit TitlebarWidget(QWidget *parent = 0);
+    ~TitlebarWidget();
 
     void exitSearch();
     void clearSearch();
@@ -46,6 +46,6 @@ protected:
     virtual void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
 private:
-    QScopedPointer<TitleBarWidgetPrivate> d_ptr;
-    Q_DECLARE_PRIVATE_D(qGetPtrHelper(d_ptr), TitleBarWidget)
+    QScopedPointer<TitlebarWidgetPrivate> d_ptr;
+    Q_DECLARE_PRIVATE_D(qGetPtrHelper(d_ptr), TitlebarWidget)
 };

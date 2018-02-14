@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -31,7 +31,7 @@
 #include <QResizeEvent>
 #include <QStandardItemModel>
 
-#include <thememanager.h>
+#include <DThemeManager>
 #include <dcombobox.h>
 
 #include "../core/music.h"
@@ -146,6 +146,8 @@ MusicListWidget::MusicListWidget(QWidget *parent) :
 {
     Q_D(MusicListWidget);
 
+    DThemeManager::instance()->registerWidget(this);
+
     setObjectName("MusicListWidget");
     setAcceptDrops(true);
 
@@ -195,8 +197,6 @@ MusicListWidget::MusicListWidget(QWidget *parent) :
     layout->addStretch();
     layout->addWidget(d->emptyHits, 0, Qt::AlignCenter);
     layout->addStretch();
-
-    ThemeManager::instance()->regisetrWidget(this);
 
     d->initConntion();
 }

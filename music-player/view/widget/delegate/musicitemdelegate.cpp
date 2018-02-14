@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -27,12 +27,14 @@
 #include <QPainter>
 #include <QStandardItemModel>
 
-#include <thememanager.h>
-#include <musicmeta.h>
+#include <DThemeManager>
 
+#include <musicmeta.h>
 
 #include "../musiclistview.h"
 #include "core/medialibrary.h"
+
+DWIDGET_USE_NAMESPACE
 
 const int MusicItemLeftMargin = 15;
 const int MusicItemRightMargin = 20;
@@ -69,25 +71,8 @@ inline int tailPointWidth(const QStyleOptionViewItem &option)
 MusicItemDelegatePrivate::MusicItemDelegatePrivate(MusicItemDelegate *parent):
     QWidget(nullptr), q_ptr(parent)
 {
-    setObjectName("MusicItem");
-    ThemeManager::instance()->regisetrWidget(this);
-}
-
-void MusicItemDelegatePrivate::setActiveAnimationPrefix(QString prefix) const
-{
-    Q_UNUSED(prefix);
-//    auto activePrefix = playingAnimation->property("ActivePrefix").toString();
-//    if (activePrefix == prefix) {
-//        return;
-//    }
-//    QStringList urls;
-//    auto urlTemp = QString("%1/%2.svg").arg(prefix);
-//    for (int i = 0; i < 94; ++i) {
-//        urls << urlTemp.arg(i);
-//    }
-//    playingAnimation->setSpeed(40);
-//    playingAnimation->setPictureSequence(urls);
-//    playingAnimation->setProperty("ActivePrefix", prefix);
+    setObjectName("MusicItemStyleProxy");
+    DThemeManager::instance()->registerWidget(this, "MusicItemStyleProxy");
 }
 
 QColor MusicItemDelegatePrivate::textColor() const

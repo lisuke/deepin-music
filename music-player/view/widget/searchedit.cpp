@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -25,7 +25,7 @@
 #include <QKeyEvent>
 
 #include <DUtil>
-#include <thememanager.h>
+#include <DThemeManager>
 
 #include "../../core/mediadatabase.h"
 #include "../../core/music.h"
@@ -37,7 +37,7 @@ SearchEdit::SearchEdit(QWidget *parent) : DSearchEdit(parent)
 {
     // Why qss not work if not call show
     show();
-    ThemeManager::instance()->regisetrWidget(this, QStringList() << "viewname");
+    DThemeManager::instance()->registerWidget(this, QStringList() << "viewname");
     connect(this, &SearchEdit::focusOut,
             this, &SearchEdit::onFocusOut);
 //    connect(this, &SearchEdit::focusIn,
@@ -66,11 +66,6 @@ void SearchEdit::setResultWidget(SearchResult *result)
 //        onFocusOut();
         emit this->searchText(text);
     });
-}
-
-QString SearchEdit::viewname()
-{
-    return m_view;
 }
 
 void SearchEdit::keyPressEvent(QKeyEvent *event)
@@ -155,14 +150,4 @@ void SearchEdit::onReturnPressed()
     } else {
         emit this->searchText(this->text());
     }
-}
-
-void SearchEdit::setViewname(QString viewname)
-{
-    if (m_view == viewname) {
-        return;
-    }
-
-    m_view = viewname;
-    emit viewnameChanged(viewname);
 }

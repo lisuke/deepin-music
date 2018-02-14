@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2017 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -63,5 +63,6 @@ QVariant AppSettings::value(const QString &key) const
 
 void AppSettings::setOption(const QString &key, const QVariant &value)
 {
+    qDebug() << "setOption" << key << value;
     m_settings->setOption(key, value);
 }

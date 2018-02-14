@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 ~ 2017 Deepin Technology Co., Ltd.
+ * Copyright (C) 2016 ~ 2018 Wuhan Deepin Technology Co., Ltd.
  *
  * Author:     Iceyer <me@iceyer.net>
  *
@@ -46,7 +46,6 @@ public:
 
     inline QColor foreground(int col, const QStyleOptionViewItem &option) const;
     inline int timePropertyWidth(const QStyleOptionViewItem &option) const;
-    void setActiveAnimationPrefix(QString prefix) const;
 
     QColor textColor() const;
     QColor titleColor() const;
